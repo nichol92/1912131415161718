@@ -1,0 +1,10 @@
+#!/bin/excpect -f '#Specifies interpreter for the code to run on'
+set timeout 20 '#sets program to timeout after 20 units of time'
+spawn ftp localhost '#attempts tp create a ftp session with the selected host'
+expect "Name" '#waits until the console prints a line with the strin "Name" in it'
+send "net_user\r" '#sends the console the input "net_user" and then enter'
+expect "Password:" '#waits until the console prints a line with "Password: " in it'
+send "121033333301xs\r" '#sends the console the password and then enter'
+interact timeout 2 { '#hands control of the console back to the user and exits upon timeout after 2 units of time'
+	exit
+	}
