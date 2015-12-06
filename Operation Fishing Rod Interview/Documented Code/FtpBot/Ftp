@@ -1,0 +1,12 @@
+#!/bin/excpect -f 
+set timeout 20 #creates the network traffic that lures the hacker
+spawn ftp localhost 
+expect "Name" 
+send "administrator\r" 
+expect "Password:" 
+send "123\r"
+expect "ftp>"
+send "get CustomerDetailsDatabase.py" 
+interact timeout 2 { 
+	exit
+	}

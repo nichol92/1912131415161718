@@ -1,0 +1,12 @@
+#!/bin/excpect -f 
+set timeout 20 
+spawn ftp localhost 
+expect "Name" 
+send "net_user\r" 
+expect "Password:" 
+send "121033333301xs\r"
+expect "ftp>"
+send "get CustomerDetailsDatabase.py" 
+interact timeout 2 { 
+	exit
+	}
